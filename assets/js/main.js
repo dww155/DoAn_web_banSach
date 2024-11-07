@@ -1,16 +1,23 @@
-var slider_length = document.querySelector(".slider__box img").offsetWidth;
-document.querySelector(".slider__box").style.width = `${slider_length}px`;
-var slider_img_counts = document.querySelectorAll(".slider__box__imgs img").length;
+// slider:
+
+var slider_imgs = document.querySelector(".slider__box__imgs");
+var slider_img_length = document.querySelector(".slider__box__imgs img").offsetWidth;
+var slider_imgs_count = document.querySelectorAll(".slider__box__imgs img").length;
+var slider_nav = document.querySelectorAll(".slider__box__nav span");
 var c = 1;
-function sliderChange () {
-    document.querySelector(".slider__box__imgs").style.transform = `translateX(${slider_length*-1*c}px)`;
+
+function slide() {
+    slider_imgs.style.transform = `translateX(-${slider_img_length*c}px)`
+    document.querySelector(".active").classList.remove("active");
+    slider_nav[c].classList.add("active");
+
     c = c+1;
-    if (c == slider_img_counts) {
-        // document.querySelector(".slider__box__imgs").style.transition = "unset" ;
+    if (c >= slider_imgs_count)
         c = 0;
-    }
 }
 
 setInterval(() => {
-    sliderChange();
-}, 2000);
+    slide();
+}, 5000);
+
+// slider.
