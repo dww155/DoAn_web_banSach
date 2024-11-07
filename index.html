@@ -6,6 +6,7 @@
     <title>Nha sach ABCDEFGHI</title>
     <script src="https://kit.fontawesome.com/a66b4f6f54.js" crossorigin="anonymous"></script>
     <link rel="stylesheet" href="./assets/css/style.css">
+    <link rel="stylesheet" href="./assets/css/basic.css">
 </head>
 <body>
     <div class="main">
@@ -18,21 +19,30 @@
                     <i class="fa-solid fa-chevron-down"></i>
                 </div>
                 <div class="header__search">
-                    <input type="text" placeholder="Tìm kiếm tại đây">
+                    <input id="header__search" type="text" placeholder="Tìm kiếm tại đây">
                     <button class="header__search__btn">
                         <i class="fa-solid fa-magnifying-glass"></i>
                     </button>
                 </div>
-                <div class="header__nav__item">
+                <div class="header__nav__item account">
                     <i class="fa-solid fa-user"></i>
                     Tài khoản
                     <i class="fa-solid fa-chevron-down"></i>
+                    <div class="header__account__box">
+                        <div class="header__account__btn signIn">
+                            Đăng nhập
+                        </div>
+                        <div class="header__account__btn signOut">
+                            Đăng ký
+                        </div>
+                    </div>
                 </div>
                 <div class="header__nav__item">
                     <i class="fa-solid fa-cart-shopping"></i>
                     Giỏ hàng
                     <i class="fa-solid fa-chevron-down"></i>
                 </div>
+                <input id="light__btn" class="light__btn" type="checkbox">
             </div>
         </div>
         <div class="slider">

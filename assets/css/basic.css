@@ -1,0 +1,43 @@
+*{
+    margin: 0;
+    box-sizing: border-box;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+html {
+    transition: .3s ease;
+}
+
+:root {
+    --header-color: #044785;
+    --hover-color: #0666c0;
+    --dark-color: #01284e;
+}
+
+.show-block {
+    display: block;
+}
+
+.show-flex {
+    display: flex;
+}
+
+.active {
+    background: bisque;
+}
+
+.dark {
+    background-color: #333;
+}
+
+.header__nav-dark {
+    background-color: var(--dark-color);
+}
+
+@keyframes zoomIn {
+    from {
+        transform:  scale(0);
+    } to {
+        transform: scale(1);
+    }
+}
