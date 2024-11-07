@@ -24,6 +24,7 @@
 }
 .header__conent__logo {
     width: 50px;
+    border-radius: 10px;
 }
 .header__content__search {
     height: 100%;
@@ -49,4 +50,18 @@
 .header__content__box__item {
     cursor: pointer;
     user-select: none;
+}
+.slider {
+    margin-top: 30px;
+}
+.slider__box {
+    margin: auto;
+    overflow: hidden;
+    border-radius: 10px;
+}
+.slider__box__imgs {
+    display: flex;
+}
+.slider__box__imgs {
+    transition: .3s ease;
 }
