@@ -1,13 +1,12 @@
 // search:
 
-var s = [
+var strs = [
     "Tìm kiếm ở đây",
     "Conan",
     "Trinh thám",
     "Truyện hài",
     "Thiếu nhi", 
     "Ngôn tình",
-    "đam",
 ]
 var header_input = document.getElementById("header__search");
 function Write (str) {
@@ -35,7 +34,7 @@ function Delete (str) {
 
 var j = 1;
 var work2 = setInterval(() => {
-    Write(s[j]);
+    Write(strs[j]);
     // Delete(s[j]);
     j = j+1;
     if (j == s.length)
