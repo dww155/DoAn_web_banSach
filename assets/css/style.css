@@ -36,10 +36,12 @@
     right: 5px;
     height: 100%;
     cursor: pointer;
+    transition:.3s ease;
 }
 
 .header__search__btn:hover {
-    color:var(--header-color);
+    color: deepskyblue;
+    text-shadow: 0 0 5px aqua;
 }
 
 .header__search input {
@@ -109,15 +111,15 @@
 
 .light__btn::before {
     content: "";
-    width: 24px;
-    height: 24px;
+    width: 22px;
+    height: 22px;
     position:absolute;
     background-color: bisque;
     border-radius: 50%;
-    top: 3px ;
-    left: 3px;
+    top: 4px ;
+    left: 4px;
     box-shadow: 0 0 10px rgba(0,0,0,.7);
-    transition: .3s ease ;
+    transition: .3s cubic-bezier(0.68, -0.55, 0.27, 1.55) ;
 }
 
 .light__btn:checked {
@@ -125,9 +127,9 @@
 }
 
 .light__btn:checked::before {
-    left: calc(100% - 27px);
+    left: calc(100% - 26px);
     background-color: transparent;
-    box-shadow: inset 6px 6px 0 0 bisque;
+    box-shadow: inset 5px 5px 0 0 bisque;
     transform: rotate(180deg);
 }
 
