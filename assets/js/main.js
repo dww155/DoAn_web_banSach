@@ -37,7 +37,7 @@ var work2 = setInterval(() => {
     Write(strs[j]);
     // Delete(s[j]);
     j = j+1;
-    if (j == s.length)
+    if (j == strs.length)
         j=0;
 }, 5000);
 
