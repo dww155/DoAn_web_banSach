@@ -8,13 +8,13 @@ var strs = [
     "Thiếu nhi", 
     "Ngôn tình",
 ]
-var header_input = document.getElementById("header__search");
+var header_signUp_inpsut = document.getElementById("header__search");
 function Write (str) {
     var tmp = "";
     var i=0;
     var work = setInterval(() => {
         tmp = tmp+str[i] ;
-        header_input.placeholder = `${tmp}`;
+        header_signUp_inpsut.placeholder = `${tmp}`;
         i = i+1;
         if (i == str.length)
             clearInterval(work);
@@ -85,15 +85,17 @@ slider_box_back.addEventListener("click", () => {
 })
 
 // slider.
-
 // light:
     var html = document.querySelector("html");
     var light_btn = document.getElementById("light__btn");
     var header = document.querySelector(".header__nav");
-
     function lightOff() {
+        var products = document.querySelectorAll(".content__box__item");
         html.classList.toggle("dark");
         header.classList.toggle("header__nav-dark");
+        products.forEach((product) => {
+            product.classList.toggle("light");
+        })
     }
 
     light_btn.addEventListener("change", () => {
@@ -118,9 +120,17 @@ var products = [
     {anh:"./assets/img/book10.png", ten: "sach 10", gia: 1000000},
     {anh:"./assets/img/book11.png", ten: "sach 11", gia: 5110000},
     {anh:"./assets/img/book12.png", ten: "sach 12", gia: 6012000},
+    {anh:"./assets/img/book13.png", ten: "sach 13", gia: 6012000},
+    {anh:"./assets/img/book14.png", ten: "sach 14", gia: 6012000},
+    {anh:"./assets/img/book15.png", ten: "sach 15", gia: 6012000},
+    {anh:"./assets/img/book16.png", ten: "sach 16", gia: 6012000},
+    {anh:"./assets/img/book17.png", ten: "sach 17", gia: 6012000},
+    {anh:"./assets/img/book18.png", ten: "sach 18", gia: 6012000},
+    {anh:"./assets/img/book19.png", ten: "sach 19", gia: 6012000},
+    {anh:"./assets/img/book20.png", ten: "sach 20", gia: 6012000},
 ]
 var currentPage = 1;
-var perPage = 3 ;
+var perPage = 6 ;
 var pages = Math.ceil(products.length / perPage);
 var pageNumberShow = document.getElementById("pagination_number");
 var pagination_begin = document.getElementById("pagination_begin");
@@ -135,22 +145,23 @@ function showPage (pageNumber) {
     for (var i = begin ; i < end ; i++) {
         if (i >= products.length)
             return;
-        var sp = `
-                <div class="content__box__item">
-                    <img src=${products[i].anh} alt="">
-                    <div class="content__box__item__note">
-                        <span>
-                            <h3>${products[i].ten}</h3>
-                            <h3>${products[i].gia}</h3>
-                        </span>
-                        <span class="content__box__item__note__add">
-                            <i class="fa-solid fa-cart-plus"></i>
-                        </span>
-                    </div>
-                </div>
+        var sp = document.createElement("div");
+        sp.classList.add("content__box__item");
+
+        sp.innerHTML = `
+            <img src=${products[i].anh} alt="">
+            <div class="content__box__item__note">
+                <span>
+                    <h3>ten: ${products[i].ten}</h3>
+                    <h3>gia: ${products[i].gia}</h3>
+                </span>
+                <span class="content__box__item__note__add">
+                    <i class="fa-solid fa-cart-plus"></i>
+                </span>
+            </div>
 
         `
-        dssp.innerHTML += sp ; 
+        dssp.appendChild(sp) ; 
     }
 }
 
@@ -188,3 +199,92 @@ pagination_prev.onclick = () => {
 }
 
 // content.
+
+// sign:
+
+var signIn_btn = document.querySelector(".header__account__btn.signIn");
+var signUp_btn = document.querySelector(".header__account__btn.signOut");
+var signUp_box = document.querySelector(".sign.signUp");
+var signIn_box = document.querySelector(".sign.signIn");
+var overlays = document.querySelectorAll(".sign");
+var form_signIn = document.getElementsByName("form_signIn")[0];
+var form_signUp = document.getElementsByName("form_signUp")[0];
+
+overlays.forEach((overlay) => {
+    overlay.onclick = () => {
+        document.querySelector(".show-flex").classList.remove("show-flex");
+    }
+})
+
+signIn_btn.onclick = () => {
+    signIn_box.classList.add("show-flex");
+}
+
+signUp_btn.onclick = () => {
+    signUp_box.classList.add("show-flex");
+}
+
+form_signIn.addEventListener("click", (e) => {
+    e.stopPropagation();
+})
+
+form_signUp.addEventListener("click", (e) => {
+    e.stopPropagation();
+})
+
+document.addEventListener("keyup", (e) => {
+    if (e.keyCode == 27) {
+        document.querySelector(".show-flex").classList.remove("show-flex");
+    }
+})
+
+// check:
+
+var signUp_inps = document.querySelectorAll(".signUp input");
+
+function checkSignUp () {
+    if (signUp_inps[0].value == "") {
+        alert("Nhập tên tài khoản");
+        signUp_inps[0].focus();
+        return false;
+    } 
+    if (signUp_inps[1].value == "") {
+        alert("Nhập mật khẩu");
+        signUp_inps[1].focus();
+        return false;
+    } 
+    if (signUp_inps[2].value == "") {
+        alert("Nhập lại mật khẩu") ; 
+        signUp_inps[2].focus();
+        return false;
+    } 
+    if (signUp_inps[1].value != signUp_inps[2].value) {
+        alert("Mật khẩu nhập lại không trùng khớp")
+        signUp_inps[2].focus();
+        return false;
+    } 
+    return true;
+}
+
+var signIn_inps = document.querySelectorAll(".signIn input");
+console.log(signIn_inps);
+
+function checkSignIn () {
+    if (signIn_inps[0].value == "") {
+        alert("Nhập tên tài khoản")
+        signIn_inps[0].focus();
+        return false;
+    }
+    if (signIn_inps[1].value == "") {
+        alert("Nhập mật khẩu")
+        signIn_inps[1].focus();
+        return false;
+    }
+}
+
+// check.
+
+// sign.
+
+document.querySelector(".footer").innerHTML = "<h1>This is footer</h1>"
+document.querySelector(".footer").style = "text-align: center";

@@ -26,6 +26,10 @@ html {
     background-color: #333;
 }
 
+.light {
+    background-color: #fff;
+}
+
 .header__nav-dark {
     background-color: var(--dark-color);
 }
@@ -35,5 +39,13 @@ html {
         transform:  scale(0);
     } to {
         transform: scale(1);
+    }
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    } to {
+        opacity: 1;
     }
 }

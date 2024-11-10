@@ -9,6 +9,37 @@
     <link rel="stylesheet" href="./assets/css/basic.css">
 </head>
 <body>
+    <div class="wrapper">
+        <div class="sign signUp">
+            <form onsubmit="return checkSignUp()" action="" name="form_signUp" class="sign__box">
+                <div class="sign__box__header">
+                    <h1>Sign up</h1>
+                </div>
+                <div class="sign__box__content">
+                    <input type="text" placeholder="Nhap ten tai khoan">
+                    <input type="password" placeholder="Tao mat khau">
+                    <input type="password" placeholder="Nhap lai mat khau">
+                </div>
+                <div class="sign__box__footer">
+                    <input value="Sign up" type="submit" name="" id="signUp">
+                </div>
+            </form>
+        </div>
+        <div class="sign signIn">
+            <form onsubmit="return checkSignIn()" action="" name="form_signIn" class="sign__box">
+                <div class="sign__box__header">
+                    <h1>Sign in</h1>
+                </div>
+                <div class="sign__box__content">
+                    <input type="text" placeholder="Nhap ten tai khoan">
+                    <input type="password" placeholder="Nhap mat khau">
+                </div>
+                <div class="sign__box__footer">
+                    <input value="Sign in" type="submit" name="" id="signIn">
+                </div>
+            </form>
+        </div>
+    </div>
     <div class="main">
         <div class="header">
             <div class="header__intro"></div>
