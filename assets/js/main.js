@@ -120,7 +120,7 @@ var products = [
     {anh:"./assets/img/book12.png", ten: "sach 12", gia: 6012000},
 ]
 var currentPage = 1;
-var perPage = 2 ;
+var perPage = 3 ;
 var pages = Math.ceil(products.length / perPage);
 var pageNumberShow = document.getElementById("pagination_number");
 var pagination_begin = document.getElementById("pagination_begin");
@@ -132,16 +132,23 @@ function showPage (pageNumber) {
     dssp.innerHTML = "";
     var begin = (pageNumber-1) * perPage ;
     var end = begin + perPage;
-    console.log(begin, end) ;
     for (var i = begin ; i < end ; i++) {
         if (i >= products.length)
             return;
         var sp = `
-        <div class="content__box__item">
-            <img src=${products[i].anh} alt="">
-            <h3>ten san pham: ${products[i].ten}</h3>
-            <h3>gia san pham: ${products[i].gia}</h3>
-        </div>
+                <div class="content__box__item">
+                    <img src=${products[i].anh} alt="">
+                    <div class="content__box__item__note">
+                        <span>
+                            <h3>${products[i].ten}</h3>
+                            <h3>${products[i].gia}</h3>
+                        </span>
+                        <span class="content__box__item__note__add">
+                            <i class="fa-solid fa-cart-plus"></i>
+                        </span>
+                    </div>
+                </div>
+
         `
         dssp.innerHTML += sp ; 
     }
