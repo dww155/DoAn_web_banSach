@@ -10,7 +10,7 @@ html {
 
 :root {
     --header-color: #044785;
-    --hover-color: #0666c0;
+    --hover-color: rgba(6, 102, 192, 0.516);
     --dark-color: #01284e;
 }
 
@@ -20,10 +20,6 @@ html {
 
 .show-flex {
     display: flex;
-}
-
-.active {
-    background: bisque;
 }
 
 .dark {
