@@ -1,6 +1,13 @@
 /* header: */
 
-    
+html {
+    scroll-behavior: smooth;
+}
+.header__intro img {
+    width: 100%;
+    height: 100px;
+    object-fit: cover;
+}
 
 .header__nav {
     background-color: var(--header-color);
@@ -9,6 +16,7 @@
     padding:10px 20px;
     align-items: center;
     justify-content: space-around;
+    transition:.3s ease;
 }
 
 .header__nav__item {
@@ -142,7 +150,11 @@
 /* slider: */
 
 .slider {
-    margin-top: 10px;
+}
+
+.slider img {
+    width: 100%;
+    z-index: 0;
 }
 
 .slider__box {
@@ -228,6 +240,7 @@
     padding:10px;
     border-radius: 20px;
     width:80%;
+    z-index: 1;
 }
 
 .content__box__item {
@@ -240,6 +253,7 @@
     box-shadow: 0 0 10px #333;
     background-color: #fff;
     animation:zoomIn .3s ease;
+    z-index: 1;
 }
 
 .content__box__item__note {

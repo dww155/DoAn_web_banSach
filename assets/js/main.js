@@ -88,6 +88,12 @@ slider_box_back.addEventListener("click", () => {
     resetInterval();
 })
 
+var slider_img = document.querySelector(".slider img");
+window.addEventListener("scroll", () => {
+    var val = window.scrollY;
+    slider_img.style = `transform:translateY(${val*0.3}px)`
+})
+
 // slider.
 // light:
     var html = document.querySelector("html");
