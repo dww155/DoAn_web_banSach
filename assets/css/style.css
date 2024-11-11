@@ -164,6 +164,7 @@ html {
     max-width: 100vw;
     border-radius: 10px;
     position:relative;
+    box-shadow: 0 0 10px #333;
 }
 .slider__box__imgs {
     display: flex;
