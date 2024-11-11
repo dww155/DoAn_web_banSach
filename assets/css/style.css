@@ -12,13 +12,14 @@
 }
 
 .header__nav__item {
-    padding: 20px 10px;
+    padding: 15px 10px;
     margin: 0 10px;
     cursor: pointer;
     user-select: none;
     font-size: 16px;
     font-weight: 600;
     border-radius: 20px;
+    text-align: center;
 }
 
 .header__nav__item:hover {
@@ -238,6 +239,7 @@
     transition: .3s ease;
     box-shadow: 0 0 10px #333;
     background-color: #fff;
+    animation:zoomIn .3s ease;
 }
 
 .content__box__item__note {
@@ -324,7 +326,7 @@
     background-color: #fff;
     padding: 20px;
     border-radius: 20px;
-    animation: zoomIn .5s cubic-bezier(0.68, -0.55, 0.27, 1.55);
+    animation: zoomIn .3s cubic-bezier(0.68, -0.55, 0.27, 1.55) forwards;
 }
 
 .sign__box__header {

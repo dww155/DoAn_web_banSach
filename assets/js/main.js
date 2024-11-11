@@ -2,11 +2,15 @@
 
 var strs = [
     "Tìm kiếm ở đây",
-    "Conan",
     "Trinh thám",
-    "Truyện hài",
-    "Thiếu nhi", 
-    "Ngôn tình",
+    "Kinh dị",
+    "Ma quỷ",
+    "Người ngoài hành tinh",
+    "UFO",
+    "Kinh dị Nhật Bản",
+    "Kinh dị Thái Lan",
+    "Lớp có tang sự không cần điểm danh",
+
 ]
 var header_signUp_inpsut = document.getElementById("header__search");
 function Write (str) {
@@ -267,7 +271,6 @@ function checkSignUp () {
 }
 
 var signIn_inps = document.querySelectorAll(".signIn input");
-console.log(signIn_inps);
 
 function checkSignIn () {
     if (signIn_inps[0].value == "") {
