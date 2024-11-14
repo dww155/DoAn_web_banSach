@@ -250,7 +250,7 @@ html {
     width: calc(30%);
     cursor: pointer;
     transition: .3s ease;
-    box-shadow: 0 0 10px #333;
+    box-shadow: 0 0 5px #333;
     background-color: #fff;
     animation:zoomIn .3s ease;
     z-index: 1;
@@ -281,6 +281,7 @@ html {
 
 .content__box__item:hover {
     transform: scale(1.1);
+    z-index: 1;
 }
 
 .content__box__item:hover img {
@@ -404,7 +405,7 @@ input[type = "submit"]:hover {
 }
 
 ::-webkit-scrollbar-thumb {
-    background-color: deepskyblue;
+    background-color: #999;
     border-radius: 10px;
     width: 5px;
 }
