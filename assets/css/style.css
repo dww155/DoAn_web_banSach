@@ -323,6 +323,67 @@ html {
     z-index: 1;
 }
 
+.detail {
+    position: fixed;
+    top: 0;
+    bottom: 0;
+    right: 0;
+    left: 0;
+    background-color: rgba(0,0,0,.5);
+    z-index: 3;
+    display: none;
+    transition: .3s ease ;
+}
+.detail__box {
+    margin:auto;
+    background-color: #fff;
+    border-radius: 20px;
+    overflow: hidden;
+    padding: 10px;
+    animation: zoomIn .3s ease;
+}
+.detail__box__content {
+    display: flex;
+}
+.detail .content__box__item__note__add {
+    display: block;
+    cursor: pointer;
+}
+.detail__box__content__col {
+    margin: 10px;
+}
+.product_detail {
+    width: 200px;
+}
+.detail__box img {
+    width: 300px;
+}
+
+.detail__text {
+    width: 500px;
+    margin-left: 10px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+}
+
+#add_cart {
+    border: none;
+    outline: none;
+    background-color: transparent;
+    font-size: 20px;
+    padding: 10px;
+    border-radius: 20px;
+    cursor: pointer;
+    user-select: none;
+    transition: .3s ease;
+    border: 2px solid var(--header-color);
+}
+#add_cart:hover {
+    color: #fff;
+    background-color: var(--header-color);
+}
 .sign {
     position:fixed;
     top: 0;
@@ -330,7 +391,7 @@ html {
     left: 0;
     right: 0;
     background-color: rgba(0,0,0,.5);
-    z-index: 2;
+    z-index: 3;
     display: flex;
     display: none;
     animation:fadeIn .3s ease;

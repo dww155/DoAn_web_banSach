@@ -12,13 +12,13 @@ var strs = [
     "Lớp có tang sự không cần điểm danh",
 
 ]
-var header_signUp_inpsut = document.getElementById("header__search");
+var header_signUp_input = document.getElementById("header__search");
 function Write (str) {
     var tmp = "";
     var i=0;
     var work = setInterval(() => {
         tmp = tmp+str[i] ;
-        header_signUp_inpsut.placeholder = `${tmp}`;
+        header_signUp_input.placeholder = `${tmp}`;
         i = i+1;
         if (i == str.length)
             clearInterval(work);
@@ -294,6 +294,42 @@ function checkSignIn () {
 // check.
 
 // sign.
+
+// detail:
+
+let items = document.querySelectorAll(".content__box__item")
+let detail = document.querySelector(".detail");
+let detail_box = document.querySelector(".detail__box");
+console.log(detail_box)
+items.forEach((i) => {
+    i.addEventListener("click", () => {
+        let str = `
+                <div class="detail__box__content">
+                    <div class="detail__box__content__col">
+                        ${i.innerHTML}
+                    </div>
+                    <div class="detail__box__content__col product_detail">
+                        <p>
+                            {product.mota}
+                        </p>
+                    </div>
+                </div>
+
+        `
+
+        detail.classList.add("show-flex");
+        detail_box.innerHTML = str;
+    })
+})
+detail.addEventListener("click", () => {
+    detail.classList.remove("show-flex");
+})
+detail_box.addEventListener("click", (e) => {
+    e.stopPropagation();
+})
+
+// detail.
+
 
 document.querySelector(".footer").innerHTML = "<h1>This is footer</h1>"
 document.querySelector(".footer").style = "text-align: center";
